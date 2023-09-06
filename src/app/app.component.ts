@@ -1,4 +1,6 @@
+import { AuthenticationService } from './services/authentication.service';
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngRoutage';
+
+  constructor(public router: Router, public authentication: AuthenticationService){}
+
+  changeConnectedState(){
+    this.authentication.changeConnectedState();
+  }
 }
