@@ -13,6 +13,14 @@ export class AppComponent {
   constructor(public router: Router, public authentication: AuthenticationService){}
 
   changeConnectedState(){
+    console.log("Test");
     this.authentication.changeConnectedState();
+    // ON ÉVITE DE FAIRE CA SAUF POUR TESTER!
+    location.reload();
+  }
+
+
+  isConnected(){
+    return this.authentication.isConnected;
   }
 }

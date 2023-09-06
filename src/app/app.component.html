@@ -1,5 +1,7 @@
 <h1>Exercice sur les routages</h1>
 <p>
-  <button mat-raised-button (onclick)="changeConnectedState()" color="primary" style="margin-right: 20px;">Connecter/Déconnecter</button>
+  <button mat-raised-button [routerLink]="['/']" style="margin-right: 20px;">Parent</button>
+  <button mat-raised-button (click)="changeConnectedState()" color="primary" style="margin-right: 20px;">Connecter/Déconnecter</button>
+  Connecté?:{{isConnected()}}
 </p>
 <router-outlet> </router-outlet>

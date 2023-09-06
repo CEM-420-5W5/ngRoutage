@@ -5,12 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class AuthenticationService {
 
-  isConnected = false;
+  isConnected:boolean = false;
 
-  constructor() { }
+  constructor() {
+    if(localStorage.getItem("isConnected") == "true")
+      this.isConnected = true;
+  }
 
   changeConnectedState() {
     this.isConnected = ! this.isConnected;
+    localStorage.setItem("isConnected", this.isConnected.toString());
   }
 
 }
